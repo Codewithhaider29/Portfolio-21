@@ -1,0 +1,159 @@
+@import '1-base/_vars.scss';
+@import '1-base/_mixins.scss';
+@import '1-base/_breakpoints.scss';
+@import '../3-tools/bourbon/_bourbon.scss';
+section {
+    height: 868px;
+    max-width: 1170px;
+    //background: pink;
+    padding-bottom: 120px;
+    margin: 0 auto;
+    @include breakpoint(lg) {
+        height: 1200px;
+    }
+    .section-about {
+        max-width: 570px;
+        height: 400px;
+        margin: 0 auto;
+        text-align: center;
+        //background: honeydew;
+        padding: 120px 0 60px 0;
+        font-family: $mainfont;
+        h2 {
+            font-size: 36px;
+            text-transform: uppercase;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+        .content-separator--line {
+            @include line;
+        }
+        .content-separator--line_xs {
+            @include line2;
+        }
+        p {
+            margin-top: 40px;
+            padding: 0 30px;
+            line-height: 25px;
+            letter-spacing: 0.75px;
+        }
+        .about-btn {
+            @include btn;
+            width: 200px;
+            margin-top: 40px;
+        }
+    }
+    .section-about--skills {
+        max-width: 1170px;
+        height: 350px;
+        //background: darkmagenta;
+        font-family: $mainfont;
+        text-align: center;        
+        h3 {
+            @include headline;
+            margin-bottom: 15px;
+        }
+        .content-separator--line {
+            @include line;
+        }
+        .content-separator--line_xs {
+            @include line2;
+        }
+
+        .skill {
+            background: #dfdfdf;
+            display: inline-block;
+            width: 370px;
+            height: 20px;
+            position: relative;
+            margin: 50px 15px 0 0;
+            @include breakpoint(phone) {
+                width: 280px;
+            }
+            span {
+                width: 300px;
+                position: absolute;
+                left: 0;
+                background: $blacky;
+                height: 20px;
+                @include breakpoint(phone) {
+                    width: 260px;
+                }
+            }
+        }
+        #html {
+            span {
+                width: 260px;
+            }
+            &:after {
+                content: 'HTML/CSS';
+                color: $blacky;
+                font-size: 24px;
+                position: absolute;
+                bottom: 20px;
+                text-transform: uppercase;
+                left: 0;
+            }
+        }
+        #js {
+            span {
+                width: 200px;
+                @include breakpoint(phone) {
+                    width: 270px;
+                }
+            }
+            &:after {
+                content: 'Javascript';
+                @extend #html;
+            }
+        }
+        #php {
+            span {
+                width: 320px;
+                @include breakpoint(phone) {
+                    width: 200px;
+                }
+            }
+            &:after {
+                content: 'Php';
+                @extend #html;
+            }
+        }
+        #python {
+            span {
+                width: 200px;
+                @include breakpoint(phone) {
+                    width: 180px;
+                }
+            }
+            &:after {
+                content: 'Python';
+                @extend #html;
+            }
+        }
+        #ruby {
+            span {
+                width: 360px;
+                @include breakpoint(phone) {
+                    width: 260px;
+                }
+            }
+            &:after {
+                content: 'Ruby';
+                @extend #html;
+            }
+        }
+        #java {
+            span {
+                width: 350px;
+                @include breakpoint(phone) {
+                    width: 270px;
+                }
+            }
+            &:after {
+                content: 'Java';
+                @extend #html;
+            }
+        }
+    }
+}

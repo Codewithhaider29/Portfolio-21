@@ -1,0 +1,97 @@
+@import '1-base/_vars.scss';
+@import '1-base/_mixins.scss';
+@import '1-base/_breakpoints.scss';
+@import '../3-tools/bourbon/_bourbon.scss';
+.section-gallery { 
+    font-family: $mainfont;
+    height: auto;    
+    max-width: 1170px;
+    //background: pink;
+    padding-bottom: 200px;
+    margin: 0 auto;
+    h5 {
+        @include headline;
+        max-width: 700px;
+        max-height: 100px;
+        margin: 0 auto 20px;
+    }
+    .content-separator--line {
+        @include line;
+    }
+    .content-separator--line_xs {
+        @include line2;
+    }
+    .section-gallery--gallery_container {
+        text-align: center;
+        margin-top: 30px;
+        .section-gallery--item {
+            width: 370px;
+            height: 280px;
+            background-image: url("http://fillmurray.com/370/280");
+            background-size: cover;
+            display: inline-block;
+            margin: 15px 15px 0 0;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
+            overflow: hidden;            
+            @include breakpoint(phone) {
+                margin: 10px auto;
+                max-width: 300px;
+                max-height: 300px;
+            }
+            .section-gallery--item_content {
+                background: rgba(0, 0, 0, 0.80);
+                position: absolute;
+                color: white;
+                text-align: center;
+                line-height: 280px;
+                text-transform: uppercase;
+                font-size: 30px;
+                height: 100%;
+                width: 100%;
+                top: 400px;
+                transition: all 300ms ease-in-out;
+                transform-origin: bottom-top;
+                &:after {
+                    content: '';
+                    border: 1px solid white;
+                    padding: 20px;
+                    height: 77%;
+                    position: absolute;
+                    left: 10px;
+                    right: 10px;
+                    top: 10px;
+                }
+            }
+            &:hover .section-gallery--item_content {
+                top: 0;
+                visibility: visible;                
+                cursor: pointer;
+            }
+            &:nth-child(1) {
+                background-image: url("../img/1.jpeg");
+            }
+            &:nth-child(2) {
+                background-image: url("../img/2.jpeg");
+            }
+            &:nth-child(3) {
+                background-image: url("../img/3.jpeg");
+            }
+            &:nth-child(4) {
+                background-image: url("../img/4.jpeg");
+            }
+            &:nth-child(5) {
+                background-image: url("../img/5.jpeg");
+            }
+            &:nth-child(6) {
+                background-image: url("../img/6.jpeg");
+            }
+
+        }
+        .button-cta {
+            @include btn;
+            margin-top: 40px;
+            width: 170px;
+        }
+    }
+}

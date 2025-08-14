@@ -1,0 +1,71 @@
+@import '1-base/_vars.scss';
+@import '1-base/_mixins.scss';
+@import '1-base/_breakpoints.scss';
+@import '../3-tools/bourbon/_bourbon.scss';
+footer {
+    max-width: 100%;
+    min-height: 100px;
+    height: auto;
+    background: $blacky;
+    @include display(flex);
+    @include justify-content(space-around);
+    @include align-items(center);
+    @include box-sizing(border-box);
+    @include flex-wrap(wrap);
+    .footer-social--container {
+        width: 240px;
+        height: 40px;
+        padding: 20px;
+        i {
+            width: 40px;
+            border: 1px solid white;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            height: 40px;
+            margin-right: 20px;
+            transition: all 0.3s ease-in-out;
+            &:last-child {
+                margin-right: 0;
+            }
+            &:hover {
+                color: $blacky;
+                background: white;
+                cursor: pointer;
+            }
+        }
+    }
+    h1 {
+        color: white;
+        font-family: $mainfont;
+        font-weight: 100;
+        width: 240px;
+        margin-right: 200px;
+        text-align: center;
+        font-size: 18px;
+        @include breakpoint(xxs) {
+            margin-right: 0;
+            margin-top: 0;
+        }
+    }
+    .fa-angle-up {
+        width: 40px;
+        background: white;
+        color: $blacky;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        font-size: 26px;
+        height: 40px;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        @include breakpoint(xxs) {
+            display: none;
+            
+        }
+    }
+}
